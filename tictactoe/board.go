@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type Board struct {
 	Board [][]string
 	N     int
@@ -75,7 +73,6 @@ func (b *Board) diagonalCheck(x int, y int) bool {
 }
 
 func (b *Board) leftToRightDigonal() bool {
-	fmt.Println(b.Board)
 	std := b.Board[0][0]
 	cnt := 1
 	for i := 1; i < b.N; i++ {
@@ -92,7 +89,6 @@ func (b *Board) leftToRightDigonal() bool {
 }
 
 func (b *Board) rightToLeftDigonal() bool {
-	fmt.Println(b.Board)
 	j := b.N - 1
 	std := b.Board[0][j]
 	cnt := 1

@@ -36,7 +36,7 @@ func (g *Game) Play() {
 			nowPlayer = g.PlayerTwo
 		}
 
-		X, Y, err := g.Input()
+		X, Y, err := g.Input(nowPlayer.Name)
 		if err != nil {
 			fmt.Println("not integer")
 			continue
@@ -63,9 +63,9 @@ func (g *Game) Play() {
 	g.printResult()
 }
 
-func (g *Game) Input() (int, int, error) {
+func (g *Game) Input(pName string) (int, int, error) {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter position : ")
+	fmt.Printf("%s Enter position : ", pName)
 	bt, _, _ := reader.ReadLine()
 	str := string(bt)
 	strings.TrimSpace(str)
