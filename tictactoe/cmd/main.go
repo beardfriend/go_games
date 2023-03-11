@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"tictactoe"
 )
 
 func main() {
@@ -21,7 +23,7 @@ func main() {
 		fmt.Println("\t|___________|___________|___________|")
 	}
 	fmt.Println("")
-	p1 := NewPlayer()
+	p1 := tictactoe.NewPlayer()
 	for {
 		fmt.Print("Enter name of fisrt Player : ")
 		p1Name, _, err := reader.ReadLine()
@@ -39,7 +41,7 @@ func main() {
 		break
 	}
 
-	p2 := NewPlayer()
+	p2 := tictactoe.NewPlayer()
 	for {
 		fmt.Print("Enter name of second Player : ")
 		p2Name, _, err := reader.ReadLine()
@@ -79,8 +81,8 @@ func main() {
 		break
 	}
 
-	board := NewBoard(N)
-	game := NewGame(p1, p2, board)
+	board := tictactoe.NewBoard(N)
+	game := tictactoe.NewGame(p1, p2, board)
 	fmt.Print("\n\n-----------------------Players Info-----------------------\n")
 	fmt.Printf("\tPlayer 1 :- Name : %10s\tMark : %s\n", p1.Name, p1.Mark)
 	fmt.Printf("\tPlayer 2 :- Name : %10s\tMark : %s\n", p2.Name, p2.Mark)

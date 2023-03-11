@@ -1,4 +1,4 @@
-package main
+package tictactoe
 
 type Board struct {
 	Board [][]string
